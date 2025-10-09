@@ -1,6 +1,6 @@
 # Portfolio React
 
-¡Bienvenido a mi **Portfolio personal**! 🚀  
+¡Bienvenido a mi **Portfolio personal**!  
 Un sitio moderno desarrollado con **React** y **Vite**, donde muestro mis proyectos, habilidades y experiencia profesional.
 
 ---
@@ -32,7 +32,7 @@ Minimalismo, usabilidad y velocidad se combinan para una experiencia profesional
 💻 Todo el código ha sido desarrollado **desde cero** con **React** y **Vite**.
 
 ---
-
+<!--
 ## Funcionalidades
 
 ✅ Sección de proyectos con demos y enlaces a GitHub.  
@@ -41,6 +41,8 @@ Minimalismo, usabilidad y velocidad se combinan para una experiencia profesional
 ✅ Diseño moderno y limpio, enfocado en UX/UI.
 
 ---
+-->
+
 
 ## Instalación y uso
 
