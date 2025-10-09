@@ -1,11 +1,11 @@
-# 🌟 Portfolio React
+# Portfolio React
 
 ¡Bienvenido a mi **Portfolio personal**! 🚀  
 Un sitio moderno desarrollado con **React** y **Vite**, donde muestro mis proyectos, habilidades y experiencia profesional.
 
 ---
 
-## 🛠 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
@@ -15,7 +15,7 @@ Un sitio moderno desarrollado con **React** y **Vite**, donde muestro mis proyec
 
 ---
 
-## 🖥️ Entorno de desarrollo
+## Entorno de desarrollo
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)  
 
@@ -25,7 +25,7 @@ Un sitio moderno desarrollado con **React** y **Vite**, donde muestro mis proyec
 
 ---
 
-## 🎨 Inspiración y diseño
+## Inspiración y diseño
 
 El diseño de este portfolio está **inspirado en los estilos de [Cargo](https://cargo.site/)**.  
 Minimalismo, usabilidad y velocidad se combinan para una experiencia profesional y elegante.  
@@ -33,7 +33,7 @@ Minimalismo, usabilidad y velocidad se combinan para una experiencia profesional
 
 ---
 
-## ⚡ Funcionalidades
+## Funcionalidades
 
 ✅ Sección de proyectos con demos y enlaces a GitHub.  
 ✅ Experiencia profesional y habilidades destacadas.  
@@ -42,7 +42,7 @@ Minimalismo, usabilidad y velocidad se combinan para una experiencia profesional
 
 ---
 
-## 🚀 Instalación y uso
+## Instalación y uso
 
 ```bash
 # Clonar el repositorio
