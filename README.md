@@ -1,7 +1,7 @@
 # Portfolio React
 
 ¡Bienvenido a mi **Portfolio personal**!  
-Un sitio moderno desarrollado con **React** y **Vite**, donde muestro mis proyectos, habilidades y experiencia profesional.
+Un entorno desarrollado con **React** y **Vite**, donde muestro mis proyectos, habilidades y experiencia profesional.
 
 ---
 
