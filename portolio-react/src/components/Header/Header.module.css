@@ -1,0 +1,19 @@
+.header {
+  background-color: #7F7C7C;
+  padding: 10px;
+}
+
+.nav {
+  display: flex;
+  gap: 16px;
+}
+
+.nav a {
+  color: white;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+.nav a:hover {
+  color: #e7e7e7;
+}

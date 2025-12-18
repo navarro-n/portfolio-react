@@ -7,10 +7,11 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      <div className={styles.brand}>Irene Pinillos Navarro</div>
       <nav className={styles.nav}>
-        <a href="#projects">home</a>
-        <a href="#about">credits</a>
+        <i className="bi bi-apple"></i>
+        <a href="#home">home</a>
+        <a href="#credits">credits</a>
+        <i className="bi bi-image"></i>
       </nav>
     </header>
   )
