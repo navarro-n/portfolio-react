@@ -1,0 +1,14 @@
+
+.footer {
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.footer p {
+  font-size: 13px;
+  color: #888585;
+}
+
