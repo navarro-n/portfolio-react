@@ -1,11 +1,19 @@
-// src/icons/DesktopIcon.jsx
 import styles from './DesktopIcon.module.css';
+import useDrag from '../hooks/useDrag';
 
-export default function DesktopIcon({ icon, label, onClick }) {
+export default function DesktopIcon({ icon, label }) {
+  const { position, onMouseDown } = useDrag();
+
   return (
-    <div className={styles.icon} onClick={onClick}>
-      <img src={icon} alt={label} />
-      <span>{label}</span>
+    <div
+      className={styles.icon}
+      onMouseDown={onMouseDown}
+      style={{
+        transform: `translate(${position.x}px, ${position.y}px)`
+      }}
+    >
+      <img src={icon} alt={label} draggable={false} />
+      {label && <span>{label}</span>}
     </div>
   );
 }

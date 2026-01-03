@@ -1,4 +1,4 @@
-import about from '../assets/about.webp';
+import aboutMe from '../assets/aboutMe.webp';
 import projects from '../assets/projects.png';
 import cv from '../assets/cv.png';
 import calculator from '../assets/calculator.webp';
@@ -8,12 +8,15 @@ import trash from '../assets/trash.webp';
 
 export const desktopIcons = [
   {
-    id: 'about',
+    id: 'aboutMe',
     label: 'About-me.txt',
-    icon: about,
-    type: 'window',
-    window: 'about',
+    icon: aboutMe,
+    size: 'large',
     draggable: true,
+    /*    
+    window: 'aboutMe',    
+    type: 'window',
+    */
   },
   {
     id: 'projects',
