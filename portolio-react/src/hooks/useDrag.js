@@ -2,8 +2,8 @@ import { useState, useRef } from 'react';
 
 const ICON_SIZE = 80;
 
-export default function useDrag() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+export default function useDrag(initial = {x: 0, y: 0}) {
+  const [position, setPosition] = useState(initial);
 
   const startMouse = useRef({ x: 0, y: 0 });
   const startPos = useRef({ x: 0, y: 0 });

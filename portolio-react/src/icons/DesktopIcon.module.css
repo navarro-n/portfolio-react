@@ -1,13 +1,14 @@
 .icon {
-  width: 80px;
+  width: auto;
   text-align: center;
   cursor: pointer;
   user-select: none;
+  position: absolute;
 }
 
 .icon img {
-  width: 64px;
-  height: 64px;
+  display: block;
+  margin: 0 auto;
 }
 
 .icon span {

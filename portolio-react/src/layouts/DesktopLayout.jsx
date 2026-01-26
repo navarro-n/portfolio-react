@@ -1,13 +1,17 @@
-import Header from '../system/Header/Header'
-import Desktop from '../desktop/Desktop'
-import Footer from '../system/Footer/Footer'
+// src/layouts/DesktopLayout.jsx
+import Header from '../system/Header/Header';
+import Footer from '../system/Footer/Footer';
+import Desktop from '../desktop/Desktop';
+import styles from './DesktopLayout.module.css';
 
 export default function DesktopLayout() {
   return (
-    <>
+    <div className={styles.layout}>
       <Header />
-      <Desktop />
+      <main className={styles.desktopArea}>
+        <Desktop />
+      </main>
       <Footer />
-    </>
-  )
+    </div>
+  );
 }

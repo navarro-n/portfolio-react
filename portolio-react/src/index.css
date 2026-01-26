@@ -4,6 +4,13 @@
 @tailwind utilities;
 
 
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 :root {
   font-family:
     -apple-system,
@@ -39,7 +46,6 @@ a:hover {
 body {
   margin: 0;
   min-width: 320px;
-  min-height: 100vh;
   background-color: #D9D9D9;
 }
 
