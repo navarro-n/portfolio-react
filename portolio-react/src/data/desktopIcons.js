@@ -28,7 +28,7 @@ export const desktopIcons = [
     label: 'Projects',
     icon: projects,
     draggable: true,
-    initial: { x: 1100, y: 80 },
+    initial: { x: 1150, y: 80 },
     size: 72,
   },
   {
@@ -44,7 +44,7 @@ export const desktopIcons = [
     label: 'motivation-letter.pdf',
     icon: letter,
     draggable: true,
-    initial: { x: 1150, y: 160 },
+    initial: { x: 1150, y: 180 },
     size: 72,
   },
   {

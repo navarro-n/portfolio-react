@@ -2,7 +2,7 @@ import styles from './DesktopIcon.module.css';
 import useDrag from '../hooks/useDrag';
 
 export default function DesktopIcon({ icon, label, size, initial }) {
-  const { position, onMouseDown } = useDrag();
+  const { position, onMouseDown } = useDrag(initial);
 
   return (
     <div
