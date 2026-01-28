@@ -1,7 +1,13 @@
 import styles from './DesktopIcon.module.css';
 import useDrag from '../hooks/useDrag';
 
-export default function DesktopIcon({ icon, label, size, initial }) {
+export default function DesktopIcon({
+  icon,
+  label,
+  size,
+  initial,
+  onDoubleClick
+}) {
   const { position, onMouseDown } = useDrag(initial);
 
   return (
@@ -11,17 +17,19 @@ export default function DesktopIcon({ icon, label, size, initial }) {
         transform: `translate(${position.x}px, ${position.y}px)`
       }}
       onMouseDown={onMouseDown}
+      onDoubleClick={onDoubleClick}
     >
-      <img 
-      src={icon} 
-      alt={label} 
-      draggable={false} 
-      style={{
-        width: size ?? 48, 
-        height: size ?? 48 
-      }}
+      <img
+        src={icon}
+        alt={label}
+        draggable={false}
+        style={{ 
+          width: size ?? 48, 
+          height: size ?? 48 
+        }}
       />
       {label && <span>{label}</span>}
     </div>
   );
 }
+

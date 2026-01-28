@@ -1,0 +1,50 @@
+.window {
+  position: absolute;
+  top: 120px;
+  left: 120px;
+  width: 420px;
+  background: #fcf9f6;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(58, 58, 58, 0.25);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+.titleBar {
+  height: 36px;
+  background: #e3e3e3;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  gap: 8px;
+  user-select: none;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+}
+
+.close {
+  width: 12px;
+  height: 12px;
+  background: #ff5f57;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
+
+.title {
+  flex: 1;
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+  pointer-events: none;
+}
+
+.content {
+  padding: 16px;
+  color: #1d1d1f;
+  font-size: 14px;
+  line-height: 1.5;
+}

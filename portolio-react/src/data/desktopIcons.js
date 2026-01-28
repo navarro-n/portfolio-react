@@ -19,6 +19,8 @@ export const desktopIcons = [
     id: 'aboutMe',
     label: 'About-me.txt',
     icon: aboutMe,
+    type: 'window',
+    window: 'aboutMe',
     draggable: true,
     initial: { x: 500, y: 300 },
     size: 160,
