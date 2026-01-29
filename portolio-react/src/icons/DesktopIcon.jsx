@@ -8,13 +8,14 @@ export default function DesktopIcon({
   initial,
   onDoubleClick
 }) {
-  const { position, onMouseDown } = useDrag(initial);
+  const { position, onMouseDown, zIndex } = useDrag(initial);
 
   return (
     <div
       className={styles.icon}
       style={{
-        transform: `translate(${position.x}px, ${position.y}px)`
+        transform: `translate(${position.x}px, ${position.y}px)`,
+        zIndex
       }}
       onMouseDown={onMouseDown}
       onDoubleClick={onDoubleClick}
