@@ -1,18 +1,17 @@
 import { useState, useRef } from 'react';
 
 const ICON_SIZE = 80;
-let topZIndex = 1;
+const ICON_Z_INDEX = 10;
 
 export default function useDrag(initial = {x: 0, y: 0}) {
-  const [position, setPosition] = useState(initial);
-  const [zIndex, setZIndex] = useState(1);
+  const [position, setPosition] = useState(initial);  
+  const [zIndex] = useState(ICON_Z_INDEX);
 
   const startMouse = useRef({ x: 0, y: 0 });
   const startPos = useRef({ x: 0, y: 0 });
 
   function onMouseDown(e) {
-    e.preventDefault();
-    setZIndex(++topZIndex);
+  e.preventDefault();
 
     startMouse.current = {
       x: e.clientX,
