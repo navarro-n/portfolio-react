@@ -5,3 +5,20 @@
   overflow: hidden;
   background-color: #e5e5e5;
 }
+
+.iconsLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.windowsLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.windowsLayer > * {
+  pointer-events: auto;
+}

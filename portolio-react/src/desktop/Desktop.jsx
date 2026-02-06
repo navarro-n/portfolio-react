@@ -14,17 +14,21 @@ export default function Desktop() {
 
   return (
     <div className={styles.desktop}>
-      {desktopIcons.map(icon => (
-        <DesktopIcon
-          key={icon.id}
-          {...icon}
-          onDoubleClick={() => handleIconOpen(icon)}
-        />
-      ))}
+      <div className={styles.iconsLayer}>
+        {desktopIcons.map(icon => (
+          <DesktopIcon
+            key={icon.id}
+            {...icon}
+            onDoubleClick={() => handleIconOpen(icon)}
+          />
+        ))}
+      </div>
 
-      {openWindow === 'aboutMe' && (
-        <AboutWindow onClose={() => setOpenWindow(null)} />
-      )}
+      <div className={styles.windowsLayer}>
+        {openWindow === 'aboutMe' && (
+          <AboutWindow onClose={() => setOpenWindow(null)} />
+        )}
+      </div>
     </div>
   );
 }

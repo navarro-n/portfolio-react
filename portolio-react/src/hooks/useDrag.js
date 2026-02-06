@@ -1,17 +1,27 @@
 import { useState, useRef } from 'react';
 
 const ICON_SIZE = 80;
-const ICON_Z_INDEX = 10;
 
-export default function useDrag(initial = {x: 0, y: 0}) {
-  const [position, setPosition] = useState(initial);  
-  const [zIndex] = useState(ICON_Z_INDEX);
+// Rango reservado para iconos: 10–99 (ventanas están en 1000)
+const ICON_Z_MIN = 10;
+const ICON_Z_MAX = 99;
+
+// Contador global compartido por todos los iconos
+let topZIndexIcons = ICON_Z_MIN;
+
+export default function useDrag(initial = { x: 0, y: 0 }) {
+  const [position, setPosition] = useState(initial);
+  const [zIndex, setZIndex] = useState(ICON_Z_MIN);
 
   const startMouse = useRef({ x: 0, y: 0 });
   const startPos = useRef({ x: 0, y: 0 });
 
   function onMouseDown(e) {
-  e.preventDefault();
+    e.preventDefault();
+
+    // Traer al frente SOLO dentro del rango de iconos
+    topZIndexIcons = Math.min(topZIndexIcons + 1, ICON_Z_MAX);
+    setZIndex(topZIndexIcons);
 
     startMouse.current = {
       x: e.clientX,
