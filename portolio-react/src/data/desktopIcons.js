@@ -29,6 +29,8 @@ export const desktopIcons = [
     id: 'projects',
     label: 'Projects',
     icon: projects,
+    type: 'window',
+    window: 'projects',
     draggable: true,
     initial: { x: 1150, y: 80 },
     size: 72,

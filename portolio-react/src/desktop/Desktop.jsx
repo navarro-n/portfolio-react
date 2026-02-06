@@ -3,6 +3,8 @@ import styles from './Desktop.module.css';
 import { desktopIcons } from '../data/desktopIcons';
 import DesktopIcon from '../icons/DesktopIcon';
 import AboutWindow from '../windows/AboutWindow';
+import ProjectsWindow from '../windows/ProjectsWindow';
+
 
 export default function Desktop() {
   const [openWindow, setOpenWindow] = useState(null);
@@ -28,6 +30,11 @@ export default function Desktop() {
         {openWindow === 'aboutMe' && (
           <AboutWindow onClose={() => setOpenWindow(null)} />
         )}
+
+        {openWindow === 'projects' && (
+        <ProjectsWindow onClose={() => setOpenWindow(null)} />
+        )}
+
       </div>
     </div>
   );

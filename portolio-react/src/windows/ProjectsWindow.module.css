@@ -1,0 +1,16 @@
+    .list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    }
+
+    .item {
+    color: #4d85ff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    }
+
+    .item:hover {
+    text-decoration: underline;
+    }
