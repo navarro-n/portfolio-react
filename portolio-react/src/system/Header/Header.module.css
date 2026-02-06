@@ -31,12 +31,24 @@
 }
 
 .header i {
-  color: white;
+  color: currentColor;
   cursor: pointer;
 }
+
 
 .time {
   margin-left: 8px;
   color: white;
   font-weight: 300;
+}
+
+.iconLink {
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconLink:hover {
+  color: #e7e7e7;
 }

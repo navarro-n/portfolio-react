@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react"
 import styles from "./Header.module.css"
 
 export default function Header() {
-
-  
-
   const [time, setTime] = useState("")
 
   useEffect(() => {
@@ -22,12 +19,17 @@ export default function Header() {
     return () => clearInterval(interval)
   }, [])
 
+  const handleHome = (e) => {
+    e.preventDefault()
+    window.location.reload()
+  }
+
   return (
     <header className={styles.header}>
       {/* IZQUIERDA */}
       <div className={styles.left}>
         <i className="bi bi-apple"></i>
-        <a href="#home">home</a>
+        <a href="#home" onClick={handleHome}>home</a>
         <a href="#credits">credits</a>
         <i className="bi bi-image"></i>
       </div>
@@ -37,9 +39,28 @@ export default function Header() {
 
       {/* DERECHA */}
       <div className={styles.right}>
-        <i className="bi bi-github"></i>
-        <i className="bi bi-linkedin"></i>
-        <i className="bi bi-envelope-fill"></i>
+        <a
+          className={styles.iconLink}
+          href="https://github.com/navarro-n"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="GitHub"
+          title="GitHub"
+        >
+          <i className="bi bi-github"></i>
+        </a>
+
+        <a
+          className={styles.iconLink}
+          href="https://www.linkedin.com/in/irenepinillosnavarro"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn"
+          title="LinkedIn"
+        >
+          <i className="bi bi-linkedin"></i>
+        </a>
+
         <span className={styles.time}>{time}</span>
       </div>
     </header>
