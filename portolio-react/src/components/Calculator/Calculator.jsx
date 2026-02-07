@@ -107,11 +107,7 @@
         if (numeroActual === 'Error') return;
 
         if (numeroAnterior !== '' && operadorActual != null && !empezarNuevoNumero) {
-        // si ya había operación en marcha, calcula antes
-        // (equivalente a tu comportamiento)
-        // Nota: para no complicar, usamos el calcular() y luego set operador
-        // pero necesitamos el resultado ya en numeroActual
-        // Así que hacemos cálculo manual aquí:
+        
         const num1 = parseFloat(numeroAnterior);
         const num2 = parseFloat(numeroActual);
         if (!Number.isNaN(num1) && !Number.isNaN(num2)) {
