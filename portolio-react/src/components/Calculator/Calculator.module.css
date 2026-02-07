@@ -1,0 +1,130 @@
+    .calculadora {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    background-color: #000000;
+    border-radius: 45px;
+
+    width: 290px;
+
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+
+    border: 5px solid #666666;
+    box-shadow:
+        0 0 20px rgb(227, 227, 227),
+        inset 0 0 10px rgba(247, 247, 247, 0.15);
+    }
+
+    .statusBar {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 5px;
+    font-size: 14px;
+    width: 100%;
+    }
+
+    .iconosDerecha {
+    display: flex;
+    gap: 6px;
+    font-size: 12px;
+    align-items: center;
+    }
+
+    .hora {
+    font-weight: 600;
+    }
+
+    .calIconoContenedor {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    }
+
+    .topButton {
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 1px solid #303030;
+    cursor: pointer;
+    }
+
+    .display {
+    width: 100%;
+    min-height: 200px;
+    text-align: right;
+    margin-bottom: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    }
+
+    .operacion {
+    color: #a5a5a5;
+    font-size: 20px;
+    margin-bottom: 0;
+    }
+
+    .resultado {
+    color: white;
+    overflow-x: hidden;
+    margin-bottom: 0;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    max-width: 100%;
+    }
+
+    .botones {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    }
+
+    .btn {
+    border-radius: 50%;
+    border: none;
+    width: 60px;
+    height: 60px;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .btn:hover {
+    filter: brightness(1.2);
+    }
+
+    .control {
+    background-color: #5a5a5a;
+    color: rgb(255, 255, 255);
+    }
+
+    .operador {
+    background-color: #ff9400;
+    }
+
+    .operador:hover {
+    background-color: #b56b05;
+    }
+
+    .numero {
+    background-color: #333333;
+    }

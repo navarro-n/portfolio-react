@@ -4,6 +4,8 @@ import { desktopIcons } from '../data/desktopIcons';
 import DesktopIcon from '../icons/DesktopIcon';
 import AboutWindow from '../windows/AboutWindow';
 import ProjectsWindow from '../windows/ProjectsWindow';
+import CalculatorWindow from '../windows/CalculatorWindow';
+
 
 
 export default function Desktop() {
@@ -35,6 +37,10 @@ export default function Desktop() {
         <ProjectsWindow onClose={() => setOpenWindow(null)} />
         )}
 
+        {openWindow === 'calculator' && (
+        <CalculatorWindow onClose={() => setOpenWindow(null)} />
+        )}
+        
       </div>
     </div>
   );

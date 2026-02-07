@@ -1,0 +1,12 @@
+    .overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1000;
+    background: transparent; /* se ve el escritorio detrás */
+    }
+
+    .shell {
+    position: absolute;
+    top: 70px;
+    right: 40px; /* típica ubicación "widget" */
+    }

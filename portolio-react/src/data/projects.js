@@ -22,9 +22,9 @@ export const projectsList = [
         }
     },
     {
-    id: 'Calculadora Apple',
-    name: 'Calculadora Apple',
-    description: 'Calculadora estilo Apple.',
+    id: 'Calculadora iPhone',
+    name: 'Calculadora iPhone',
+    description: 'Calculadora iPhone.',
     links: {
         repo: 'https://github.com/navarro-n/calculadora',
         }

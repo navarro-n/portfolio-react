@@ -55,6 +55,8 @@ export const desktopIcons = [
     id: 'calculator',
     label: 'Calculator',
     icon: calculator,
+    type: 'window',
+    window: 'calculator',
     draggable: true,
     initial: { x: 900, y: 380 },
     size: 72,
