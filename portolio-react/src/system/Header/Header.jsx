@@ -25,7 +25,17 @@ export default function Header({ onToggleTheme, headerVariant = "solid" }) {
     >
       <div className={styles.left}>
         <i className="bi bi-apple"></i>
-        <a href="#home">home</a>
+        <a
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            window.location.reload();
+          }}
+        >
+          home
+        </a>
+
+
         <a href="#credits">credits</a>
 
         <button
