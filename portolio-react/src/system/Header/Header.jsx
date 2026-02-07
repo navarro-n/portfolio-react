@@ -52,10 +52,31 @@ export default function Header({ onToggleTheme, headerVariant = "solid" }) {
       <div className={styles.center}></div>
 
       <div className={styles.right}>
-        <i className="bi bi-github"></i>
-        <i className="bi bi-linkedin"></i>
-        <span className={styles.time}>{time}</span>
-      </div>
+  <a
+    className={styles.iconLink}
+    href="https://github.com/navarro-n"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="GitHub"
+    title="GitHub"
+  >
+    <i className="bi bi-github"></i>
+  </a>
+
+  <a
+    className={styles.iconLink}
+    href="https://www.linkedin.com/in/irenepinillosnavarro"
+    target="_blank"
+    rel="noreferrer"
+    aria-label="LinkedIn"
+    title="LinkedIn"
+  >
+    <i className="bi bi-linkedin"></i>
+  </a>
+
+  <span className={styles.time}>{time}</span>
+</div>
+
     </header>
   );
 }
