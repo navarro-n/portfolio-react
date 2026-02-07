@@ -1,24 +1,24 @@
 import styles from './Window.module.css';
 import useDrag from '../hooks/useDrag';
 
-let topZIndex = 10;
-
-export default function Window({ title, children, onClose }) {
-  const { position, onMouseDown, zIndex } = useDrag({ x: 120, y: 120 });
+export default function Window({
+  title,
+  children,
+  onClose,
+  initial = { x: 120, y: 120 },
+  width,
+}) {
+  const { position, onMouseDown } = useDrag(initial);
 
   return (
     <div
       className={styles.window}
       style={{
         transform: `translate(${position.x}px, ${position.y}px)`,
-        zIndex
+        width: width ? `${width}px` : undefined,
       }}
-      onMouseDown={() => (topZIndex++, null)}
     >
-      <div
-        className={styles.titleBar}
-        onMouseDown={onMouseDown}
-      >
+      <div className={styles.titleBar} onMouseDown={onMouseDown}>
         <div className={styles.controls}>
           <button
             className={styles.close}
@@ -30,9 +30,7 @@ export default function Window({ title, children, onClose }) {
         <div className={styles.title}>{title}</div>
       </div>
 
-      <div className={styles.content}>
-        {children}
-      </div>
+      <div className={styles.content}>{children}</div>
     </div>
   );
 }

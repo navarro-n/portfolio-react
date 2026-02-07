@@ -4,21 +4,28 @@ import { projectsList } from '../data/projects';
 
 export default function ProjectsWindow({ onClose }) {
     return (
-        <Window title="Projects" onClose={onClose}>
-        <div className={styles.list}>
+        <Window
+        title="Projects"
+        onClose={onClose}
+        initial={{ x: 760, y: 90 }}
+        width={360}
+        >
+        <div className={styles.body}>
+            <div className={styles.list}>
             {projectsList.map((p) => (
-            <a
+                <a
                 key={p.id}
                 className={styles.item}
-                href={p.url}
+                href={p.links?.live || p.links?.repo || p.url}
                 target="_blank"
                 rel="noreferrer"
                 title={p.description}
-            >
+                >
                 {p.name}
-            </a>
+                </a>
             ))}
+            </div>
         </div>
         </Window>
     );
-    }
+}

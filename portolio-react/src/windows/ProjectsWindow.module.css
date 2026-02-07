@@ -1,3 +1,7 @@
+    .body {
+    padding: 8px 25px;
+    }
+
     .list {
     display: flex;
     flex-direction: column;
@@ -5,7 +9,7 @@
     }
 
     .item {
-    color: #4d85ff;
+    color: #3675ff;
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
