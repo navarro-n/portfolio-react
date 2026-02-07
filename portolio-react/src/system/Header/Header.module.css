@@ -1,12 +1,47 @@
 .header {
   height: 32px;
-  background-color: #7f7c7c;
+  background: var(--header-bg, #7f7c7c);
+  color: var(--header-fg, #ffffff);
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 15px;
   font-size: 14px;
+  position: relative;
 }
+
+.glass {
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(24px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* Reflejo/brillo */
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.06)
+  );
+
+  opacity: 1;
+}
+
+
+.glass > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 
 .left,
 .center,
@@ -21,34 +56,44 @@
 }
 
 .header a {
-  color: white;
+  color: currentColor;
   text-decoration: none;
   font-weight: 300;
 }
 
 .header a:hover {
-  color: #e7e7e7;
+  opacity: 0.85;
 }
 
 .header i {
   color: currentColor;
-  cursor: pointer;
 }
 
+
+.iconButton {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: currentColor;
+  display: inline-flex;
+  align-items: center;
+}
+
+.iconButton:hover {
+  opacity: 0.85;
+}
 
 .time {
   margin-left: 8px;
-  color: white;
+  color: currentColor;
   font-weight: 300;
 }
-
-.iconLink {
-  color: white;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+.iconButton:focus {
+  outline: none;
 }
 
-.iconLink:hover {
-  color: #e7e7e7;
+.iconButton:focus-visible {
+  outline: none;
 }

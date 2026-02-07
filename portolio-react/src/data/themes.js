@@ -1,0 +1,38 @@
+    export const THEMES = [
+    {
+        id: "default-gray",
+        name: "Gris",
+        headerVariant: "solid",
+        headerBg: "#7f7c7c",
+        headerFg: "#ffffff",
+        desktopBg: "#e5e5e5",
+        desktopImage: null,
+    },
+    {
+        id: "glass-wallpaper",
+        name: "Cristal + wallpaper",
+        headerVariant: "glass",
+        headerBg: "rgba(255, 255, 255, 0.25)",
+        headerFg: "#3b3b3b",
+        desktopBg: "#0b0b0c",
+        desktopImage: "/wallpaper-1.jpg",
+    },
+    {
+        id: "blue",
+        name: "Azul",
+        headerVariant: "solid",
+        headerBg: "#1e293b",
+        headerFg: "#ffffff",
+        desktopBg: "#cfe8ff",
+        desktopImage: null,
+    },
+    {
+        id: "green",
+        name: "Verde",
+        headerVariant: "solid",
+        headerBg: "#2c682f",
+        headerFg: "#ffffff",
+        desktopBg: "#cfffdb",
+        desktopImage: null,
+    },
+    ];
