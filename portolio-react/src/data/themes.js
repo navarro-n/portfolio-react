@@ -24,7 +24,8 @@
         name: "Cristal + wallpaper 2",
         headerVariant: "glass",
         headerBg: "rgba(255, 255, 255, 0.25)",
-        headerFg: "#3b3b3b",
+        headerFg: "#f5f5f7",
+
         desktopBg: "#0b0b0c",
         desktopImage: "/wallpaper-2.jpg",
     }
