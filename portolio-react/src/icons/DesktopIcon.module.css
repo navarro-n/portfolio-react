@@ -4,6 +4,7 @@
   cursor: pointer;
   user-select: none;
   position: absolute;
+  touch-action: none;
 }
 
 .icon img {

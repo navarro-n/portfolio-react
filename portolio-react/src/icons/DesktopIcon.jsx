@@ -6,9 +6,21 @@ export default function DesktopIcon({
   label,
   size,
   initial,
+  bounds,
   onDoubleClick
 }) {
-  const { position, onMouseDown, zIndex } = useDrag(initial);
+  const imgSize = size ?? 48;
+
+  const rect = {
+    w: imgSize,
+    h: imgSize + (label ? 22 : 0),
+  };
+
+  const { position, onMouseDown, zIndex } = useDrag(initial, {
+    bounds,
+    rect,
+    padding: 8,
+  });
 
   return (
     <div
@@ -24,13 +36,9 @@ export default function DesktopIcon({
         src={icon}
         alt={label}
         draggable={false}
-        style={{ 
-          width: size ?? 48, 
-          height: size ?? 48 
-        }}
+        style={{ width: imgSize, height: imgSize }}
       />
       {label && <span>{label}</span>}
     </div>
   );
 }
-
