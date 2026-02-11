@@ -9,6 +9,7 @@
 
 .footer p {
   font-size: 13px;
-  color: #888585;
+  color: var(--footer-fg, #888585);
+  text-shadow: var(--footer-shadow, none);
 }
 
