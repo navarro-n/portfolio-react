@@ -58,10 +58,30 @@ export default function Desktop() {
   const [bounds, setBounds] = useState({ width: 0, height: 0 });
   const [openWindow, setOpenWindow] = useState(null);
 
-  function handleIconOpen(icon) {
-    if (icon.type !== 'window') return;
+  function downloadFile(url, suggestedName) {
+  // Si prefieres abrir en pestaña, usa window.open(url, "_blank", "noopener,noreferrer")
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = suggestedName || "";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+}
+
+function handleIconAction(icon) {
+  if (icon.type === "window") {
     setOpenWindow(icon.window);
+    return;
   }
+
+  if (icon.type === "download" && icon.file) {
+    downloadFile(icon.file, icon.label);
+    return;
+  }
+
+  // decorative o cualquier otro tipo: no hace nada
+}
+
 
   useEffect(() => {
     if (!desktopRef.current) return;
@@ -90,7 +110,7 @@ export default function Desktop() {
             initial={getResponsiveInitial(icon, index, bounds)}
             
             size={bounds.width < 900 ? Math.min(icon.size ?? 48, 96) : icon.size}
-            onDoubleClick={() => handleIconOpen(icon)}
+            onDoubleClick={() => handleIconAction(icon)}
           />
         ))}
       </div>
