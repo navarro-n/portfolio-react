@@ -58,29 +58,21 @@ export default function Desktop() {
   const [bounds, setBounds] = useState({ width: 0, height: 0 });
   const [openWindow, setOpenWindow] = useState(null);
 
-  function downloadFile(url, suggestedName) {
-  // Si prefieres abrir en pestaña, usa window.open(url, "_blank", "noopener,noreferrer")
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = suggestedName || "";
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-}
-
 function handleIconAction(icon) {
   if (icon.type === "window") {
     setOpenWindow(icon.window);
     return;
   }
 
-  if (icon.type === "download" && icon.file) {
-    downloadFile(icon.file, icon.label);
+  // PDFs: abrir en pestaña nueva (recomendado para desktop + móvil)
+  if (icon.type === "pdf" && icon.file) {
+    window.open(icon.file, "_blank", "noopener,noreferrer");
     return;
   }
 
-  // decorative o cualquier otro tipo: no hace nada
+  // decorative u otros: no hace nada
 }
+
 
 
   useEffect(() => {
