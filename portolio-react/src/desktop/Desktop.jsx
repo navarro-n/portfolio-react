@@ -93,15 +93,15 @@ function handleIconAction(icon) {
       <div className={styles.iconsLayer}>
         {desktopIcons.map((icon, index) => (
           <DesktopIcon
-            key={icon.id}
-            {...icon}
-            bounds={bounds}
-            
-            initial={getResponsiveInitial(icon, index, bounds)}
-            
-            size={bounds.width < 900 ? Math.min(icon.size ?? 48, 96) : icon.size}
-            onDoubleClick={() => handleIconAction(icon)}
-          />
+          key={icon.id}
+          {...icon}
+          bounds={bounds}
+          initial={getResponsiveInitial(icon, index, bounds)}
+          size={bounds.width < 900 ? Math.min(icon.size ?? 48, 96) : icon.size}
+          onOpen={() => handleIconAction(icon)}
+          onDoubleClick={() => handleIconAction(icon)}
+        />
+
         ))}
       </div>
 
