@@ -16,7 +16,11 @@
   align-items: center;
   position: relative;
   cursor: grab;
+
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
 }
+
 
 .titleBar:active {
   cursor: grabbing;

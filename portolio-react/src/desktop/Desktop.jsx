@@ -63,14 +63,10 @@ function handleIconAction(icon) {
     setOpenWindow(icon.window);
     return;
   }
-
-  // PDFs: abrir en pestaña nueva (recomendado para desktop + móvil)
   if (icon.type === "pdf" && icon.file) {
     window.open(icon.file, "_blank", "noopener,noreferrer");
     return;
   }
-
-  // decorative u otros: no hace nada
 }
 
 
@@ -89,6 +85,8 @@ function handleIconAction(icon) {
     ro.observe(el);
     return () => ro.disconnect();
   }, []);
+
+  const safeBounds = bounds?.width && bounds?.height ? bounds : null;
 
   return (
     <div ref={desktopRef} className={styles.desktop}>
@@ -109,11 +107,12 @@ function handleIconAction(icon) {
 
       <div className={styles.windowsLayer}>
         {openWindow === 'aboutMe' && (
-          <AboutWindow onClose={() => setOpenWindow(null)} />
+      <AboutWindow bounds={safeBounds} onClose={() => setOpenWindow(null)} />
         )}
 
+
         {openWindow === 'projects' && (
-          <ProjectsWindow onClose={() => setOpenWindow(null)} />
+        <ProjectsWindow bounds={safeBounds} onClose={() => setOpenWindow(null)} />
         )}
 
         {openWindow === 'calculator' && (

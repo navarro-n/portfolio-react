@@ -2,13 +2,13 @@ import Window from './Window';
 import styles from './ProjectsWindow.module.css';
 import { projectsList } from '../data/projects';
 
-export default function ProjectsWindow({ onClose }) {
+export default function ProjectsWindow({ onClose, bounds }) {
     return (
         <Window
         title="Projects"
         onClose={onClose}
-        initial={{ x: 760, y: 90 }}
-        width={360}
+        bounds={bounds}
+        initial={{ x: 760, y: 90 }}    
         >
         <div className={styles.body}>
             <div className={styles.list}>
