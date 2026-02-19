@@ -1,4 +1,3 @@
-// src/icons/DesktopIcon.jsx
 import styles from "./DesktopIcon.module.css";
 import useDrag from "../hooks/useDrag";
 
