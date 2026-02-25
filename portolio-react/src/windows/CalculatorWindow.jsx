@@ -15,7 +15,7 @@
         <div
         className={styles.overlay}
         onMouseDown={(e) => {
-            // Cierra solo si haces click en el fondo (fuera de la calculadora)
+            
             if (e.target === e.currentTarget) onClose();
         }}
         onTouchStart={(e) => {

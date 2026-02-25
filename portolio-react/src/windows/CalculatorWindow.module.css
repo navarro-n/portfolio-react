@@ -1,12 +1,24 @@
-    .overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1000;
-    background: transparent; /* se ve el escritorio detrás */
-    }
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  background: transparent;
+}
 
-    .shell {
-    position: absolute;
-    top: 70px;
-    right: 40px; /* típica ubicación "widget" */
-    }
+.shell {
+  position: absolute;
+  top: 70px;
+  right: 40px;
+
+  transform: scale(0.9);
+  transform-origin: top right;
+}
+
+@media (max-width: 900px) {
+  .shell {
+    top: 20px;
+    right: 12px;
+    transform: scale(0.78);
+    transform-origin: top right;
+  }
+}

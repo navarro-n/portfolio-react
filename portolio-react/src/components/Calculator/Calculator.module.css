@@ -15,8 +15,8 @@
 
     border: 5px solid #666666;
     box-shadow:
-        0 0 20px rgb(227, 227, 227),
-        inset 0 0 10px rgba(247, 247, 247, 0.15);
+        0 0 20px rgba(227, 227, 227, 0.286),
+        inset 0 0 10px rgba(247, 247, 247, 0.143);
     }
 
     .statusBar {
