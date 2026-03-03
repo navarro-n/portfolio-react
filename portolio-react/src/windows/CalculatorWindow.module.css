@@ -1,24 +1,26 @@
-.overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1000;
-  background: transparent;
+.windowSkin {
+  background: #4a4a4a;
+  border-radius: 14px;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
 }
 
-.shell {
-  position: absolute;
-  top: 70px;
-  right: 40px;
-
-  transform: scale(0.9);
-  transform-origin: top right;
+.titleBarSkin {
+  background: #4a4a4a;
+  border-bottom: none;
+  min-height: 28px;
 }
 
-@media (max-width: 900px) {
-  .shell {
-    top: 20px;
-    right: 12px;
-    transform: scale(0.78);
-    transform-origin: top right;
-  }
+.contentSkin {
+  padding: 0;
+  background: #4a4a4a;
+}
+
+.body {
+  height: 100%;
+  padding: 6px 8px 8px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }

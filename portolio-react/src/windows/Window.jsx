@@ -10,23 +10,23 @@ export default function Window({
   width,
   height,
   bounds,
+  windowClassName = "",
+  titleBarClassName = "",
+  contentClassName = "",
 }) {
   const winRef = useRef(null);
 
-  
   const [measuredRect, setMeasuredRect] = useState({
     w: width ?? 420,
     h: height ?? 260,
   });
 
-  
   useLayoutEffect(() => {
     if (!winRef.current) return;
     const r = winRef.current.getBoundingClientRect();
     setMeasuredRect({ w: Math.round(r.width), h: Math.round(r.height) });
   }, []);
 
-  
   useEffect(() => {
     if (!winRef.current) return;
     const el = winRef.current;
@@ -53,7 +53,7 @@ export default function Window({
   return (
     <div
       ref={winRef}
-      className={styles.window}
+      className={`${styles.window} ${windowClassName}`}
       style={{
         transform: `translate(${drag.position.x}px, ${drag.position.y}px)`,
         width: width ? `${width}px` : undefined,
@@ -62,7 +62,7 @@ export default function Window({
       }}
     >
       <div
-        className={styles.titleBar}
+        className={`${styles.titleBar} ${titleBarClassName}`}
         onPointerDown={hasPointer ? drag.onPointerDown : undefined}
         onPointerMove={hasPointer ? drag.onPointerMove : undefined}
         onPointerUp={hasPointer ? drag.onPointerUp : undefined}
@@ -82,7 +82,7 @@ export default function Window({
         <div className={styles.title}>{title}</div>
       </div>
 
-      <div className={styles.content}>{children}</div>
+      <div className={`${styles.content} ${contentClassName}`}>{children}</div>
     </div>
   );
 }

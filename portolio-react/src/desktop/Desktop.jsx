@@ -68,9 +68,6 @@ function handleIconAction(icon) {
     return;
   }
 }
-
-
-
   useEffect(() => {
     if (!desktopRef.current) return;
     const el = desktopRef.current;
@@ -116,7 +113,7 @@ function handleIconAction(icon) {
         )}
 
         {openWindow === 'calculator' && (
-          <CalculatorWindow onClose={() => setOpenWindow(null)} />
+          <CalculatorWindow bounds={bounds} onClose={() => setOpenWindow(null)} />
         )}
       </div>
     </div>

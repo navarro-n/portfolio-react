@@ -26,13 +26,17 @@
   cursor: grabbing;
 }
 
+.title:empty {
+  display: none;
+}
+
+
 .controls {
   display: flex;
   align-items: center;
   padding-left: 12px;
 }
 
-/* BOTONES (izquierda) */
 .controls {
   display: flex;
   align-items: center;
@@ -40,7 +44,6 @@
   z-index: 2;
 }
 
-/* BOTÓN ROJO */
 .close {
   width: 12px;
   height: 12px;
@@ -53,8 +56,6 @@
   padding: 0;
 }
 
-
-/* X oculta */
 .close::before,
 .close::after {
   content: '';

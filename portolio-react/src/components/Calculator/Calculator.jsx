@@ -152,77 +152,173 @@
     }
 
     return (
-        <div className={styles.calculadora}>
-        <div className={styles.statusBar}>
-            <span className={styles.hora}>{hora}</span>
-            <div className={styles.iconosDerecha}>
-            <i className="bi bi-reception-4"></i>
-            <i className="bi bi-wifi"></i>
-            <i className="bi bi-battery-full"></i>
-            </div>
-        </div>
+  <div className={styles.calculadora}>
+    <div className={styles.display}>
+      <p className={styles.operacion}>{operacion}</p>
+      <p className={styles.resultado} style={{ fontSize }}>
+        {numeroActual}
+      </p>
+    </div>
 
-        <div className={styles.calIconoContenedor}>
-            <button className={styles.topButton} type="button" aria-label="Historial">
-            <i className="bi bi-list-ul"></i>
-            </button>
-            <button className={styles.topButton} type="button" aria-label="Calculadora">
-            <i className="bi bi-calculator"></i>
-            </button>
-        </div>
+    <div className={styles.botones}>
+      {/* fila 1 */}
+      <button
+        className={`${styles.btn} ${styles.control}`}
+        onClick={limpiar}
+        type="button"
+      >
+        AC
+      </button>
 
-        <div className={styles.display}>
-            <p className={styles.operacion}>{operacion}</p>
-            <p className={styles.resultado} style={{ fontSize }}>{numeroActual}</p>
-        </div>
+      <button
+        className={`${styles.btn} ${styles.control}`}
+        onClick={toggleNegativo}
+        type="button"
+      >
+        +/-
+      </button>
 
-        <div className={styles.botones}>
-            {/* fila 1 */}
-            <button className={`${styles.btn} ${styles.control}`} onClick={borrar} type="button">
-            <i className="bi bi-backspace"></i>
-            </button>
-            <button className={`${styles.btn} ${styles.control}`} onClick={limpiar} type="button">AC</button>
-            <button className={`${styles.btn} ${styles.control}`} onClick={porcentaje} type="button">
-            <i className="bi bi-percent"></i>
-            </button>
-            <button className={`${styles.btn} ${styles.operador}`} onClick={() => seleccionarOperador('/')} type="button">
-            <i className="bi bi-slash-lg"></i>
-            </button>
+      <button
+        className={`${styles.btn} ${styles.control}`}
+        onClick={porcentaje}
+        type="button"
+      >
+        %
+      </button>
 
-            {/* fila 2 */}
-            <button className={`${styles.btn} ${styles.numero}`} onClick={() => agregarNumero('7')} type="button">7</button>
-            <button className={`${styles.btn} ${styles.numero}`} onClick={() => agregarNumero('8')} type="button">8</button>
-            <button className={`${styles.btn} ${styles.numero}`} onClick={() => agregarNumero('9')} type="button">9</button>
-            <button className={`${styles.btn} ${styles.operador}`} onClick={() => seleccionarOperador('x')} type="button">
-            <i className="bi bi-x-lg"></i>
-            </button>
+      <button
+        className={`${styles.btn} ${styles.operador}`}
+        onClick={() => seleccionarOperador("/")}
+        type="button"
+      >
+        ÷
+      </button>
 
-            {/* fila 3 */}
-            <button className={`${styles.btn} ${styles.numero}`} onClick={() => agregarNumero('4')} type="button">4</button>
-            <button className={`${styles.btn} ${styles.numero}`} onClick={() => agregarNumero('5')} type="button">5</button>
-            <button className={`${styles.btn} ${styles.numero}`} onClick={() => agregarNumero('6')} type="button">6</button>
-            <button className={`${styles.btn} ${styles.operador}`} onClick={() => seleccionarOperador('-')} type="button">
-            <i className="bi bi-dash-lg"></i>
-            </button>
+      {/* fila 2 */}
+      <button
+        className={`${styles.btn} ${styles.numero}`}
+        onClick={() => agregarNumero("7")}
+        type="button"
+      >
+        7
+      </button>
 
-            {/* fila 4 */}
-            <button className={`${styles.btn} ${styles.numero}`} onClick={() => agregarNumero('1')} type="button">1</button>
-            <button className={`${styles.btn} ${styles.numero}`} onClick={() => agregarNumero('2')} type="button">2</button>
-            <button className={`${styles.btn} ${styles.numero}`} onClick={() => agregarNumero('3')} type="button">3</button>
-            <button className={`${styles.btn} ${styles.operador}`} onClick={() => seleccionarOperador('+')} type="button">
-            <i className="bi bi-plus-lg"></i>
-            </button>
+      <button
+        className={`${styles.btn} ${styles.numero}`}
+        onClick={() => agregarNumero("8")}
+        type="button"
+      >
+        8
+      </button>
 
-            {/* fila 5 */}
-            <button className={`${styles.btn} ${styles.numero}`} onClick={toggleNegativo} type="button">
-            <i className="bi bi-plus-slash-minus"></i>
-            </button>
-            <button className={`${styles.btn} ${styles.numero}`} onClick={() => agregarNumero('0')} type="button">0</button>
-            <button className={`${styles.btn} ${styles.numero}`} onClick={() => agregarNumero('.')} type="button">
-            <i className="bi bi-dot"></i>
-            </button>
-            <button className={`${styles.btn} ${styles.operador}`} onClick={calcular} type="button">=</button>
-        </div>
-        </div>
-    );
+      <button
+        className={`${styles.btn} ${styles.numero}`}
+        onClick={() => agregarNumero("9")}
+        type="button"
+      >
+        9
+      </button>
+
+      <button
+        className={`${styles.btn} ${styles.operador}`}
+        onClick={() => seleccionarOperador("x")}
+        type="button"
+      >
+        ×
+      </button>
+
+      {/* fila 3 */}
+      <button
+        className={`${styles.btn} ${styles.numero}`}
+        onClick={() => agregarNumero("4")}
+        type="button"
+      >
+        4
+      </button>
+
+      <button
+        className={`${styles.btn} ${styles.numero}`}
+        onClick={() => agregarNumero("5")}
+        type="button"
+      >
+        5
+      </button>
+
+      <button
+        className={`${styles.btn} ${styles.numero}`}
+        onClick={() => agregarNumero("6")}
+        type="button"
+      >
+        6
+      </button>
+
+      <button
+        className={`${styles.btn} ${styles.operador}`}
+        onClick={() => seleccionarOperador("-")}
+        type="button"
+      >
+        
+      </button>
+
+      {/* fila 4 */}
+      <button
+        className={`${styles.btn} ${styles.numero}`}
+        onClick={() => agregarNumero("1")}
+        type="button"
+      >
+        1
+      </button>
+
+      <button
+        className={`${styles.btn} ${styles.numero}`}
+        onClick={() => agregarNumero("2")}
+        type="button"
+      >
+        2
+      </button>
+
+      <button
+        className={`${styles.btn} ${styles.numero}`}
+        onClick={() => agregarNumero("3")}
+        type="button"
+      >
+        3
+      </button>
+
+      <button
+        className={`${styles.btn} ${styles.operador}`}
+        onClick={() => seleccionarOperador("+")}
+        type="button"
+      >
+        +
+      </button>
+
+      {/* fila 5 */}
+      <button
+        className={`${styles.btn} ${styles.numero} ${styles.zero}`}
+        onClick={() => agregarNumero("0")}
+        type="button"
+      >
+        0
+      </button>
+
+      <button
+        className={`${styles.btn} ${styles.numero}`}
+        onClick={() => agregarNumero(".")}
+        type="button"
+      >
+        .
+      </button>
+
+      <button
+        className={`${styles.btn} ${styles.operador}`}
+        onClick={calcular}
+        type="button"
+      >
+        =
+      </button>
+    </div>
+  </div>
+);
+
     }
