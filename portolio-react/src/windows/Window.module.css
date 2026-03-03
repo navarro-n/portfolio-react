@@ -49,11 +49,26 @@
   height: 12px;
   border-radius: 50%;
   background: #ff5f57;
-  border: none;
-  cursor: pointer;
 
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+
+  cursor: pointer;
   position: relative;
   padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.close:focus,
+.close:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.close:active {
+  transform: translateY(1px) scale(0.95);
+  filter: brightness(0.9);
 }
 
 .close::before,
