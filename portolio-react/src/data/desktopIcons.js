@@ -9,7 +9,7 @@ import trash from '../assets/trash.webp';
 export const desktopIcons = [
   {
     id: 'trash',
-    label: 'Bad-ideas',
+    label:'',
     icon: trash,
     draggable: true,
     initial: { x: 20, y: 20 },
