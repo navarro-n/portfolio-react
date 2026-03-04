@@ -137,3 +137,27 @@
     font-size: 16px;
   }
 }
+/*Cambios para quitar cuadro azul*/
+.btn {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+}
+
+.btn:focus,
+.btn:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.zero {
+  -webkit-tap-highlight-color: transparent;
+}
+.calculadora {
+  -webkit-user-select: none;
+  user-select: none;
+}
