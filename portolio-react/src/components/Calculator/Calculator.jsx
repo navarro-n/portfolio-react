@@ -257,7 +257,7 @@
         onClick={() => seleccionarOperador("-")}
         type="button"
       >
-        
+        -
       </button>
 
       {/* fila 4 */}

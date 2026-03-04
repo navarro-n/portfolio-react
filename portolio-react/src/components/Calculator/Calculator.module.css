@@ -137,7 +137,7 @@
     font-size: 16px;
   }
 }
-/*Cambios para quitar cuadro azul*/
+/*Para evitar cuadro azul en los botones*/
 .btn {
   -webkit-tap-highlight-color: transparent;
   tap-highlight-color: transparent;
