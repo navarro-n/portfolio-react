@@ -6,7 +6,7 @@
     headerBg: "#7f7c7c",
     headerFg: "#ffffff",
     desktopBg: "#e5e5e5",
-    desktopImage: null,
+    desktopImage: "/walpaper.webp",
 
     footerFg: "#888585",
     footerShadow: "none",
