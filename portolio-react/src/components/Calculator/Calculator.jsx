@@ -6,7 +6,7 @@
     const [numeroAnterior, setNumeroAnterior] = useState('');
     const [operadorActual, setOperadorActual] = useState(null);
     const [empezarNuevoNumero, setEmpezarNuevoNumero] = useState(true);
-    const MAX_DIGITS = 9;
+    const MAX_DIGITS = 8;
 
     
     const [hora, setHora] = useState(() => {
