@@ -6,8 +6,9 @@
     const [numeroAnterior, setNumeroAnterior] = useState('');
     const [operadorActual, setOperadorActual] = useState(null);
     const [empezarNuevoNumero, setEmpezarNuevoNumero] = useState(true);
+    const MAX_DIGITS = 9;
 
-    // Hora tipo iPhone (puedes dejarla fija si prefieres)
+    
     const [hora, setHora] = useState(() => {
         const now = new Date();
         return now.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
@@ -29,10 +30,16 @@
     }, [numeroAnterior, operadorActual]);
 
     const fontSize = useMemo(() => {
-        const longitud = numeroActual.length;
-        if (longitud > 12) return 30;
-        if (longitud > 8) return 45;
-        return 80;
+      const longitud = numeroActual.length;
+
+      
+      if (numeroActual === "Error") return 48;
+
+      if (longitud > 12) return 28;
+      if (longitud > 10) return 34;
+      if (longitud > 8) return 42;
+
+      return 64;
     }, [numeroActual]);
 
     function limpiar() {
@@ -50,20 +57,32 @@
     }
 
     function agregarNumero(digito) {
-        setNumeroActual((prev) => {
-        if (digito === '.' && prev.includes('.')) return prev;
+  setNumeroActual((prev) => {
+    if (prev === "Error") return "0";
 
-        const cantidadDigitos = prev.replace('-', '').replace('.', '').length;
-        if (!empezarNuevoNumero && cantidadDigitos >= 6) return prev;
+    
+    if (digito === "." && prev.includes(".")) return prev;
 
-        if (prev === '0' || empezarNuevoNumero) {
-            setEmpezarNuevoNumero(false);
-            return digito === '.' ? '0.' : String(digito);
-        }
+    
+    const digitsCount = prev.replace("-", "").replace(".", "").length;
 
-        return prev + String(digito);
-        });
+    
+    if (!empezarNuevoNumero && digitsCount >= MAX_DIGITS && digito !== ".") {
+      return prev;
     }
+
+    
+    if (prev === "0" || empezarNuevoNumero) {
+      setEmpezarNuevoNumero(false);
+      return digito === "." ? "0." : String(digito);
+    }
+
+    
+    if (digitsCount >= MAX_DIGITS && digito !== ".") return prev;
+
+    return prev + String(digito);
+  });
+}
 
     function calcular() {
         const num1 = parseFloat(numeroAnterior);
@@ -96,6 +115,24 @@
         default:
             return;
         }
+
+        let texto = String(resultado);
+        
+        
+        if (texto.replace("-", "").replace(".", "").length > MAX_DIGITS) {
+          
+          if (texto.includes(".")) {
+            const [ent, dec] = texto.split(".");
+            const allowedDec = Math.max(0, MAX_DIGITS - ent.replace("-", "").length);
+            texto = allowedDec > 0 ? `${ent}.${dec.slice(0, allowedDec)}` : ent;
+          }
+          
+          
+          if (texto.replace("-", "").replace(".", "").length > MAX_DIGITS) {
+            texto = Number(resultado).toPrecision(MAX_DIGITS);
+          }
+        }
+        setNumeroActual(texto);
 
         setNumeroActual(String(resultado));
         setNumeroAnterior('');
